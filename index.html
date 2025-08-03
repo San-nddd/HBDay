@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Love!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #ffd1dc, #ffe4ec);
+      overflow-x: hidden;
+    }
+
+    .envelope-container {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #fff0f5;
+      border-radius: 20px;
+      margin: 60px auto;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    input, button {
+      padding: 12px;
+      margin: 10px 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    input {
+      width: 60%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background-color: #ff7aa2;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e0638e;
+    }
+
+    .message {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      margin: 30px auto 10px;
+      max-width: 600px;
+      background: #fff5f8;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .slider-container {
+      display: none;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .slider {
+      position: relative;
+      width: 90%;
+      max-width: 500px;
+      margin: auto;
+      height: 400px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 1;
+    }
+
+    .slide img, .slide video {
+      width: 90%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .caption {
+      font-size: 16px;
+      font-style: italic;
+      color: #b02a66;
+    }
+
+    .slider-buttons {
+      margin-top: 25px;
+    }
+
+    .slider-buttons button {
+      background-color: #ffb6c1;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 0 10px;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .slider-buttons button:hover {
+      background-color: #ff92aa;
+    }
+
+    .flower {
+      position: fixed;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('/sakura.png');
+      background-size: cover;
+      animation: fall 10s linear infinite;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    for (let i = 0; i < 20; i++) {
+      let flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDelay = Math.random() * 10 + 's';
+      document.body.appendChild(flower);
+    }
+  </script>
+
+  <div class="envelope-container" id="envelope">
+    <h2 style="font-family: 'Pacifico', cursive; color: #ff4d79;">🎁 Masukkan Kode Ulang Tahun 🎁</h2>
+    <p>clue : tanggal berapa ya sekarang?</p>
+    <input type="password" id="accessCode" placeholder="Enter code...">
+    <button onclick="checkCode()">Buka Envelope</button>
+  </div>
+
+  <div class="message" id="loveMessage">
+    <h2 style="font-family: 'Pacifico', cursive; color:#b02a66;">Selamat ulang tahun, Adee sayangkuu ❤️</h2>
+    <p style="margin-top:10px">
+     Haiii sayangku, maaf yaa akuu cuman bisa bikin ini sederhana, soalnya aku belum se jago itu hehehe. Tapi semogaa adee sukaa🥰.
+    Akuu pengen ucapin selamat ulang tahun buat kesayangan akuu inii, semogaa harapan adee terkabul diijabah sama Allah sayangku, sehat sehat sayanggg, bahagiaa dunia akhirat, umurnya berkah,
+    rizqinya lancar, jangann lupaa jugaa yaa,nambahnya nominal umur itu berarti nambah tanggung jawabnya juga, makin rajin lagi belajarnya, tambah tambahin ilmu pengetahuan sama ilmu agamanya juga dipupuk
+    lebih lagiii...eummm satuu lagiii, ,maafff sayanggg yaa selamaa inii akuu belum jadiii calon suami yangg baikk...
+    masihhh banyak salahnya... banyak kurangnyaa... akuu mintaa maafff sayanggg yaaa, makasihhh banyakkk jugaa udahh selaluu nemeninn akuu sayanggg, Barokallaha fii umrik sayangggkuu bahagia selalu yaa🤍💞😘👸🫶🎉</p>
+  </div>
+
+  <div class="slider-container" id="sliderContainer">
+    <div class="slider" id="slider">
+      <div class="slide"><video src="/Foto saya/14.mp4" autoplay muted loop ></video><div class="caption">Happy Birthday Sayang😊🥰🤍🎉</div></div>
+      <div class="slide"><img src="/Foto saya/1.jpg" alt="Photo 1"><div class="caption">Ingett gaa pas kita nonton ke AP sama temen ade?</div></div>
+       <div class="slide"><img src="/Foto saya/2.jpg" alt="Photo 1"><div class="caption">Ini pas kita sengaja ketemuan di depan rumah ibu difotoin sama si Abhi hahaha💑</div></div>
+      <div class="slide"><video src="/Foto saya/3.mp4" autoplay muted loop></video><div class="caption">Ini pass Foto kitaa sayanggg🫶 🎥</div></div>
+      <div class="slide"><img src="/Foto saya/4.jpg" alt="Photo 1"><div class="caption">Nah iniii pas jajan basoo dii kebonkol😅</div></div>
+      <div class="slide"><img src="/Foto saya/5.jpg" alt="Photo 1"><div class="caption">Ini pas momen sebelum lulusss kitaa 💑</div></div>
+      <div class="slide"><img src="/Foto saya/6.jpg" alt="Photo 1"><div class="caption">NAAA iniii passs kitaa wisuda di AP hehehe😅🥰 💑</div></div>
+      <div class="slide"><img src="/Foto saya/7.jpg" alt="Photo 1"><div class="caption">Inii jugaa sayanggg 💑</div></div>
+      <div class="slide"><video src="/Foto saya/8.mp4" autoplay muted loop></video><div class="caption">Inii pas kita udah di SMK pokoknya udah lumayan lama weh 🎥</div></div>
+      <div class="slide"><img src="/Foto saya/9.jpg" alt="Photo 1"><div class="caption">Karena pas lomba kita atau lebih tepatnya adee lupaa aku pengen fotbar jadii inii ajaa hahaha lucuuuu🥰😘😘🤍🫶 💑</div></div>
+      <div class="slide"><video src="/Foto saya/10.mp4" autoplay muted loop></video><div class="caption">Inii passs kitaa kee Green School sayanggg yangg pemandangannya indahh ituu loohh 🎥</div></div>
+      <div class="slide"><img src="/Foto saya/11.jpg" alt="Photo 1"><div class="caption">Lucuuu nyooo hahaha🫶 💑</div></div>
+      <div class="slide"><img src="/Foto saya/12.jpg" alt="Photo 1"><div class="caption">Inii pass dikelas  💑</div></div>
+      <div class="slide"><img src="/Foto saya/13.jpg" alt="Photo 1"><div class="caption">Ini pap terbaru adeee yangg ituu tuhh lucuuu bangetttt tapiii teteppp Akuuu butuhhh pappppp!!!!</div></div>
+      
+      
+    </div>
+    <div class="slider-buttons">
+      <button onclick="nextSlide()">➡️lanjut</button>
+    </div>
+  </div>
+<audio id="bgMusic" autoplay loop>
+  <source src="/Foto saya/bg sound.mp3" type="audio/mpeg">
+</audio>
+  <script>
+    const code = "0308";
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      const slides = document.querySelectorAll(".slide");
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+      });
+      if (slides[index]) {
+        slides[index].classList.add("active");
+      }
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const slides = document.querySelectorAll(".slide");
+      showSlide((currentSlide + 1) % slides.length);
+    }
+
+    function prevSlide() {
+      const slides = document.querySelectorAll(".slide");
+      showSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+
+    function checkCode() {
+      const userCode = document.getElementById("accessCode").value;
+      if(userCode === code) {
+        document.getElementById("envelope").style.display = 'none';
+        document.getElementById("sliderContainer").style.display = 'block';
+        document.getElementById("loveMessage").style.display = 'block';
+        setTimeout(() => {
+          showSlide(0);
+        }, 100);
+      } else {
+        alert("Oops! The code is incorrect.");
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bgMusic');
+
+    function enableAudio() {
+      audio.play().catch(() => {
+        // Jika gagal, pengguna bisa memulai manual
+        console.log('Audio autoplay ditolak oleh browser.');
+      });
+      document.removeEventListener('click', enableAudio);
+    }
+
+    document.addEventListener('click', enableAudio);
+  });
+  </script>
+</body>
+</html>
